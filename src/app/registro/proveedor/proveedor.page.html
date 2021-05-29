@@ -1,0 +1,336 @@
+<head>
+<!-- 1. Configure SystemJS -->
+<script src="system.config.js"></script> 
+<!-- 2. Add WOW dependency-->
+<script src="node_modules/wowjs/dist/wow.min.js"></script> 
+<link rel="stylesheet" type="text/css" href="node_modules/animate.css/animate.min.css">
+</head>
+<ion-header>
+  <ion-toolbar color="primary">
+    
+    <ion-title style="text-align: center; margin-right: auto; margin-left: auto;"><ion-button><ion-icon name="arrow-undo-outline"></ion-icon></ion-button> Registro de Proveedor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-slides pager="true" [options]="slideOpts" #slider style="height: 100vh;">
+    <!--Slider 1-->
+    <ion-slide>
+      <ion-card-content class="contentSliders">
+          <img class="wow fadeInUp" data-wow-delay="0.6s" src="https://res.cloudinary.com/newstartap/image/upload/v1614557674/imagenesProyectos/proyectoDinastiaDigital_b288ba.webp" class="imagenLogo">
+          <br/>
+          <br/>
+          <div class="form-group">
+            <ion-card-title for="NOMBRETITULAR" class="wow fadeInUp" data-wow-delay="0.4s">Hola, Bienvenido al registro de proveedores de Dinastía Digital ¿Cómo te llamas?</ion-card-title>
+            <br/>
+            <ion-card-subtitle class="wow fadeInRight" data-wow-delay="0.8s">(Representante Legal, Administrador)</ion-card-subtitle>
+            <br/>
+            <ion-item>
+              <ion-label position="floating" class="wow fadeInLeft" data-wow-delay="1.2s">Nombre Completo</ion-label>
+              <ion-input type="text"
+              id="NOMBRETITULAR"
+              required
+              [(ngModel)]="registro.NOMBRETITULAR"
+              name="NOMBRETITULAR"></ion-input>
+            </ion-item>
+          </div>
+          <ion-button color="primary" (click)="next(); activarWow()">Siguiente <ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button>
+        </ion-card-content>
+    </ion-slide>
+    <!--Slider 1-->
+    <!--Slider 2-->
+    <ion-slide>
+      <ion-card-content class="contentSliders">
+        <img class="wow fadeInUp" data-wow-delay="0.6s" src="https://res.cloudinary.com/newstartap/image/upload/v1614557674/imagenesProyectos/proyectoDinastiaDigital_b288ba.webp" class="imagenLogo">
+        <br/>
+        <br/>
+        <div class="form-group">
+          <ion-card-title for="NOMBREEMPRESA" class="wow bounceInUp" data-wow-delay="0.4s">¿Cuál es el nombre de su empresa o emprendimiento?.</ion-card-title>
+          
+          <br/>
+          <ion-item>
+            <ion-label position="floating" class="wow fadeInRightBig" data-wow-delay="0.8s">Nombre Empresarial</ion-label>
+            <ion-input type="text"
+            id="NOMBREEMPRESA"
+            required
+            [(ngModel)]="registro.NOMBREEMPRESA"
+            name="NOMBREEMPRESA"></ion-input>
+          </ion-item>
+        </div>
+        <ion-button color="primary" (click)="back(); activarWow()"><ion-icon name="arrow-back-circle-outline"></ion-icon> Anterior </ion-button>
+      <ion-button color="primary" (click)="next(); activarWow()">Siguiente <ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button>
+      </ion-card-content>
+    </ion-slide>
+    <!--Slider 2-->
+    <!--Slider 3-->
+    <ion-slide>
+      <ion-card-content class="contentSliders">
+        <img src="https://res.cloudinary.com/newstartap/image/upload/v1614557674/imagenesProyectos/proyectoDinastiaDigital_b288ba.webp" class="imagenLogo">
+        <br/>
+        <br/>
+        <div class="form-group">
+          <ion-card-title for="NIT"  class="wow zoomIn" data-wow-delay="0.4s">Se requiere la comprobación de su existencia legal por medio del RUT ¿Cuál es su número NIT?</ion-card-title>
+          <br/>
+          <ion-card-subtitle class="wow fadeInDown" data-wow-delay="0.8s">(número de identifiación tributaria "sin digito de verificación - DIV")</ion-card-subtitle>
+          <br/>
+          <ion-item>
+            <ion-label position="floating" class="wow fadeInLeft" data-wow-delay="1.2s">Número</ion-label>
+            <ion-input type="number"
+            id="NIT"
+            required
+            [(ngModel)]="registro.NIT"
+            name="NIT"></ion-input>
+          </ion-item>
+        </div>
+        <ion-button color="primary" (click)="back(); activarWow()"><ion-icon name="arrow-back-circle-outline"></ion-icon> Anterior </ion-button>
+      <ion-button color="primary" (click)="next(); activarWow()">Siguiente <ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button>
+      </ion-card-content>
+    </ion-slide>
+  <!--Slider 3-->
+    <!--Slider 4-->
+    <ion-slide>
+      <ion-card-content class="contentSliders">
+        <img src="https://res.cloudinary.com/newstartap/image/upload/v1614557674/imagenesProyectos/proyectoDinastiaDigital_b288ba.webp" class="imagenLogo">
+        <br/>
+        <br/>
+        <div class="form-group">
+          <ion-card-title for="CORREO" class="wow fadeInDown" data-wow-delay="0.4s">Se requiere correo con el cual pueda acceder al Dashboard administrativo de su comercio y recibir notificaciones del mismo</ion-card-title>
+          <br/>
+          <ion-card-subtitle class="wow fadeInUp" data-wow-delay="0.8s">(correo electrónico al cual de más uso)</ion-card-subtitle>
+          <br/>
+          <ion-item>
+            <ion-label position="floating" class="wow fadeInRightBig" data-wow-delay="1.2s">Correo</ion-label>
+            <ion-input type="email"
+            id="CORREO"
+            required
+            [(ngModel)]="registro.CORREO"
+            name="CORREO"></ion-input>
+          </ion-item>
+        </div>
+        <ion-button color="primary" (click)="back(); activarWow()"><ion-icon name="arrow-back-circle-outline"></ion-icon> Anterior </ion-button>
+      <ion-button color="primary" (click)="next(); activarWow()">Siguiente <ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button>
+      </ion-card-content>
+    </ion-slide>
+  <!--Slider 4-->
+    <!--Slider 5-->
+    <ion-slide>
+      <ion-card-content class="contentSliders">
+        <img src="https://res.cloudinary.com/newstartap/image/upload/v1614557674/imagenesProyectos/proyectoDinastiaDigital_b288ba.webp" class="imagenLogo">
+        <br/>
+        <br/>
+        <div class="form-group">
+          <ion-card-title for="TIENETELEGRAM" class="wow fadeIn" data-wow-delay="0.4s">¡Conoces de Telegram! ¿Lo tienes instalado?</ion-card-title>
+          <br/>
+          <ion-card-subtitle class="wow fadeInUp" data-wow-delay="0.8s">(Es necesario que lo tengas instalado, ya que por medio de nuestra programación te llegará notificaciones de su comercio electrónico)</ion-card-subtitle>
+          <br/>
+          <ion-list>
+            <ion-item >
+            <ion-label  class="wow fadeInRightBig" data-wow-delay="1.2s">SI</ion-label>
+            <ion-checkbox slot="end"  [(ngModel)]="registro.TIENETELEGRAMSI" ></ion-checkbox>
+          </ion-item>
+          <ion-item >
+              <ion-label  class="wow fadeInRightBig" data-wow-delay="1.2s">NO, pero lo voy a instalar</ion-label>
+            <ion-checkbox slot="end"  [(ngModel)]="registro.TIENETELEGRAMNO"></ion-checkbox>
+          </ion-item>
+              
+            
+          </ion-list>
+        </div>
+        <ion-button color="primary" (click)="back(); activarWow()"><ion-icon name="arrow-back-circle-outline"></ion-icon> Anterior </ion-button>
+      <ion-button color="primary" (click)="next(); activarWow()">Siguiente <ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button>
+      
+    </ion-card-content>
+    </ion-slide>
+  <!--Slider 5-->
+    <!--Slider 6-->
+    
+    <ion-slide>
+      <ion-card-content class="contentSliders">
+        <img src="https://res.cloudinary.com/newstartap/image/upload/v1614557674/imagenesProyectos/proyectoDinastiaDigital_b288ba.webp" class="imagenLogo">
+        <br/>
+        <br/>
+        <div class="form-group">
+          <ion-card-title for="NUMEROMOVIL" class="wow fadeInRightBig" data-wow-delay="0.4s">¿Cuál es su número móvil?</ion-card-title>
+          <br/>
+          <ion-card-subtitle class="wow fadeIn" data-wow-delay="0.8s">(si es colombaino sin indicativo - otro país con indicativo +)¡No se te olvide instalar Telegram! </ion-card-subtitle>
+          <br/>
+          <ion-item>
+            <ion-label position="floating" class="wow fadeInLeft" data-wow-delay="1.2s">Número Móvil</ion-label>
+            <ion-input type="number"
+            id="NUMEROMOVIL"
+            required
+            [(ngModel)]="registro.NUMEROMOVIL"
+            name="NUMEROMOVIL"></ion-input>
+          </ion-item>
+        </div>
+        <ion-button color="primary" (click)="back(); activarWow()"><ion-icon name="arrow-back-circle-outline"></ion-icon> Anterior </ion-button>
+      <ion-button color="primary" (click)="next(); activarWow()">Siguiente <ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button>
+    </ion-card-content>
+    </ion-slide>
+  <!--Slider 6-->
+    <!--Slider 7-->
+    <ion-slide>
+      <ion-card-content class="contentSliders">
+        <img src="https://res.cloudinary.com/newstartap/image/upload/v1614557674/imagenesProyectos/proyectoDinastiaDigital_b288ba.webp" class="imagenLogo">
+        <br/>
+        <br/>
+        <div class="form-group">
+          <ion-card-title class="wow fadeIn" data-wow-delay="0.4s">Departamento y Municipio donde se encuentra su establecimiento de comercio</ion-card-title>
+          <br/>
+          <ion-card-subtitle class="wow fadeIn" data-wow-delay="0.6s">(Colombia) </ion-card-subtitle>
+          <br/>
+
+         
+
+          
+            <div  >
+              <ion-item>
+                <ion-card-title class="wow fadeIn" data-wow-delay="0.8s">Departamento</ion-card-title>
+              <select
+                (change)="cambioRegion($event.target.value)"
+               class="custom-select sinborde" [(ngModel)]="registro.DEPARTAMENTO" type="text" name="DEPARTAMENTO" id="DEPARTAMENTO" >
+              
+              <option *ngFor="let region of regiones" [value]='region' > {{region}}</option>
+            
+            </select>
+          </ion-item>
+            </div>
+            <br/>
+            <br/>
+            <div *ngIf="ciudades.length > 1"  >
+              <ion-item>
+                <ion-card-title>Municipio</ion-card-title>
+              <select class="custom-select sinborde" [(ngModel)]="registro.MUNICIPIO" type="text" name="MUNICIPIO" id="MUNICIPIO" >
+              <option *ngFor="let ciudad of ciudades" > {{ciudad}}</option>
+            
+            </select>
+          </ion-item>
+            </div>
+          
+          <br/>
+        </div>
+        <ion-button color="primary" (click)="back(); activarWow()"><ion-icon name="arrow-back-circle-outline"></ion-icon> Anterior </ion-button>
+      <ion-button color="primary" (click)="next(); activarWow()">Siguiente <ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button>
+      
+    </ion-card-content>
+    </ion-slide>
+  <!--Slider 7-->
+    <!--Slider 8-->
+    <ion-slide>
+      <ion-card-content class="contentSliders">
+        <img src="https://res.cloudinary.com/newstartap/image/upload/v1614557674/imagenesProyectos/proyectoDinastiaDigital_b288ba.webp" class="imagenLogo">
+        <br/>
+        <br/>
+        <div class="form-group">
+          <ion-card-title for="CUENTAMOVIL"  class="wow fadeIn" data-wow-delay="0.4s">¿Tiene Daviplata y/o Nequi</ion-card-title>
+          <br/>
+          <ion-card-subtitle  class="wow fadeIn" data-wow-delay="0.8s">(opción multiple, puede escoger las dos o una sola)</ion-card-subtitle>
+          <br/>
+          <ion-list>
+            <ion-item >
+            <ion-label   class="wow fadeIn" data-wow-delay="1.2s">Tengo DAVIPLATA</ion-label>
+            <ion-checkbox slot="end"  [(ngModel)]="registro.DAVIPLATA" ></ion-checkbox>
+          </ion-item>
+          <ion-item >
+              <ion-label   class="wow fadeIn" data-wow-delay="1.3s">Tengo NEQUI</ion-label>
+            <ion-checkbox slot="end"  [(ngModel)]="registro.NEQUI"></ion-checkbox>
+          </ion-item>
+          <ion-item >
+            <ion-label   class="wow fadeIn" data-wow-delay="1.4s">NO tengo ninguno</ion-label>
+          <ion-checkbox slot="end"  [(ngModel)]="registro.NODAVIPLTANONEQUI"></ion-checkbox>
+        </ion-item>
+              
+            
+          </ion-list>
+        </div>
+        <ion-button color="primary" (click)="back(); activarWow()"><ion-icon name="arrow-back-circle-outline"></ion-icon> Anterior </ion-button>
+      <ion-button color="primary" (click)="next(); activarWow()">Siguiente <ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button>
+      
+    </ion-card-content>
+    </ion-slide>
+  <!--Slider 8-->
+    <!--Slider 9-->
+    
+    <ion-slide>
+      <ion-card-content class="contentSliders">
+        <img src="https://res.cloudinary.com/newstartap/image/upload/v1614557674/imagenesProyectos/proyectoDinastiaDigital_b288ba.webp" class="imagenLogo">
+        <br/>
+        <br/>
+        <div class="form-group">
+          <ion-card-title for="NUMEROCUENTAMOVIL" class="wow fadeInUp" data-wow-delay="0.4s">¿Cuál es el número de DAVIPLATA o NEQUI?</ion-card-title>
+          <br/>
+          <ion-card-subtitle class="wow fadeInUp" data-wow-delay="0.8s">(Con el fin de consignar las ventas realizadas de su comercio electrónico)</ion-card-subtitle>
+          <br/>
+          <ion-item>
+            <ion-label position="floating" class="wow fadeInLeft" data-wow-delay="1.2s">Número Móvil</ion-label>
+            <ion-input type="number"
+            id="NUMEROCUENTAMOVIL"
+            required
+            [(ngModel)]="registro.NUMEROCUENTAMOVIL"
+            name="NUMEROCUENTAMOVIL"></ion-input>
+          </ion-item>
+        </div>
+        <ion-button color="primary" (click)="back(); activarWow()"><ion-icon name="arrow-back-circle-outline"></ion-icon> Anterior </ion-button>
+      <ion-button color="primary" (click)="next(); activarWow()">Siguiente <ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button>
+      
+    </ion-card-content>
+    </ion-slide>
+  <!--Slider 9-->
+    <!--Slider 10-->
+    <ion-slide>
+      <ion-card-content class="contentSliders">
+        <img src="https://res.cloudinary.com/newstartap/image/upload/v1614557674/imagenesProyectos/proyectoDinastiaDigital_b288ba.webp" class="imagenLogo">
+        <br/>
+        <br/>
+        <div class="form-group">
+          <ion-card-title for="CUENTABANCARIA" class="wow fadeInDown" data-wow-delay="0.4s">Si desea que se le consigne  las ventas a una cuenta Bancaria escribir lo siguiente:</ion-card-title>
+          <br/>
+          <ion-card-subtitle class="wow fadeInDown" data-wow-delay="0.8s">(Tipo de cuenta "ahorros o corriente" - Número de cuenta - Banco - Nombre del titular o
+             empresa a la que pertenezca la cuenta - Cedula del titular o nit a la que pertenezca la cuenta )</ion-card-subtitle>
+          <br/>
+          <ion-item>
+            <ion-label position="floating" class="wow fadeInLeft" data-wow-delay="1.2s">Escribir con lo indicado</ion-label>
+            <ion-input type="text"
+            id="CUENTABANCARIA"
+            required
+            [(ngModel)]="registro.CUENTABANCARIA"
+            name="CUENTABANCARIA"></ion-input>
+          </ion-item>
+        </div>
+        <ion-button color="primary" (click)="back(); activarWow()"><ion-icon name="arrow-back-circle-outline"></ion-icon> Anterior </ion-button>
+      <ion-button color="secondary" (click)="presentAlertConfirm()">Enviar solicitud <ion-icon name="send-outline"></ion-icon></ion-button>
+      
+    </ion-card-content>
+    </ion-slide>
+  <!--Slider 10-->
+    <!--Slider 11-->
+    <ion-slide>
+      <ion-card-content class="contentSliders">
+        <div class="animated bounce infinite">
+        <img class="animated bounce infinite" src="https://res.cloudinary.com/newstartap/image/upload/v1614557674/imagenesProyectos/proyectoDinastiaDigital_b288ba.webp" class="imagenLogo">
+      </div>
+        <br/>
+        <br/>
+        <div class="form-group">
+          <ion-card-title for="CUENTABANCARIA" class="animated bounce infinite">Felicitaciones por el Registro!!!</ion-card-title>
+          <br/>
+          <ion-card-subtitle class="wow fadeInLeft" data-wow-delay="0.8s">Vamos a validar cuanto antes y crear su comercio electrónico</ion-card-subtitle>
+          <br/>
+          <ion-card-subtitle class="wow fadeInDown" data-wow-delay="1.2s">"Le agradecemos por habernos elegido, haremos un gran Equipo"</ion-card-subtitle>
+        </div>
+        <ion-button color="primary" (click)="newRegistro()" ><ion-icon name="arrow-back-circle-outline"></ion-icon> Hacer otro registro </ion-button>
+      <ion-button color="primary" routerLink="">Volver <ion-icon name="storefront-outline" ></ion-icon></ion-button>
+      
+    </ion-card-content>
+    </ion-slide>
+  <!--Slider 10-->
+    <!--Slider 11-->
+
+  </ion-slides>
+  <div *ngIf="submitted">
+    <h4>You submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newTutorial()">Add</button>
+  </div>
+   
+</ion-content>
