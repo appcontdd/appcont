@@ -9,6 +9,14 @@ const routes: Routes = [
     path: 'proveedor',
     loadChildren: () => import('./registro/proveedor/proveedor.module').then( m => m.ProveedorPageModule)
   },
+  {
+    path: 'login-page-proveedor',
+    loadChildren: () => import('./login-page-proveedor/login-page-proveedor.module').then( m => m.LoginPageProveedorPageModule)
+  },
+  {
+    path: 'solicitud-de-registro',
+    loadChildren: () => import('./solicitud-de-registro/solicitud-de-registro.module').then( m => m.SolicitudDeRegistroPageModule)
+  },
 
   
 ];

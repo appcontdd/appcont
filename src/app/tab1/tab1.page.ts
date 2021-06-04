@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController, MenuController } from '@ionic/angular';
+import { NgwWowService } from 'ngx-wow';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -26,7 +27,7 @@ export class Tab1Page {
                   iframe:'https://drive.google.com/uc?export=view&id=1E_AiMAIyNScq4LOr96CHPeW5vOzGoAes',
                   },
                 ];
-constructor(public menu: MenuController, public alertController: AlertController) { }
+constructor(public menu: MenuController, public alertController: AlertController, private wowService: NgwWowService) { }
 
   openFirst() {
     this.menu.enable(true, 'first');
@@ -44,6 +45,11 @@ constructor(public menu: MenuController, public alertController: AlertController
   closePerfil() {
     this.menu.close('second');
   }
+
+  activarWow(){
+    this.wowService.init();
+  }
+
   
   async presentAlert() {
     const alert = await this.alertController.create({
