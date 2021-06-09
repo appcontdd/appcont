@@ -8,12 +8,17 @@ import { NgwWowService } from 'ngx-wow';
 })
 export class LoginPageProveedorPage implements OnInit {
 
+  public proveedor = [{nameProveedor:"La Feria del Aseo"},]
+
+
   constructor(private wowService: NgwWowService) {
     this.wowService.init(); 
    }
 
   ngOnInit() {
     this.wowService.init(); 
+    console.log(this.proveedor);
   }
 
 }
+

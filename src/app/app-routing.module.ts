@@ -17,6 +17,10 @@ const routes: Routes = [
     path: 'solicitud-de-registro',
     loadChildren: () => import('./solicitud-de-registro/solicitud-de-registro.module').then( m => m.SolicitudDeRegistroPageModule)
   },
+  {
+    path: 'olvido-pagina',
+    loadChildren: () => import('./olvido-pagina/olvido-pagina.module').then( m => m.OlvidoPaginaPageModule)
+  },
 
   
 ];

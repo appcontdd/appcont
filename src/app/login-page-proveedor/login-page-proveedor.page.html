@@ -7,8 +7,8 @@
 
 <ion-content>
   <ion-segment scrollable value="proveedor" class="segmentosProveedor">
-    <ion-segment-button value="proveedor" class="segmentosProveedor">
-      Proveedor: La feria del Aseo
+    <ion-segment-button value="proveedor" class="segmentosProveedor" *ngFor="let pro of proveedor">
+      Proveedor: {{pro.nameProveedor}}
     </ion-segment-button>
     <ion-segment-button value="otrosProveedores" class="segmentosProveedor">
                Buscar mi Comercio Electrónico 
@@ -47,7 +47,7 @@
       <ion-button color="primary">Ingresar <ion-icon name="log-in-outline" class="wow wobble infinite"></ion-icon></ion-button>
     </form>
     <div>
-      <ion-chip color="primary" slot="start">
+      <ion-chip color="primary" slot="start" routerLink="/olvido-pagina">
         <ion-label > <ion-icon name="reload-circle-outline"></ion-icon> Olvidé la Contraseña</ion-label>
       </ion-chip>
       &nbsp;&nbsp;&nbsp;
