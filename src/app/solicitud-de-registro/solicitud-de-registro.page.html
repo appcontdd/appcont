@@ -18,13 +18,19 @@
      El proceso de registro se realizará por medio de correo electrónico, donde le expresaremos a detalle terminos y condiciones,
      masificar la seguridad informatica en el proceso de registro y tratamiendo adecuado de datos a solicitar.
     </ion-label>
-     <ion-item class="inputCorreo" >
-      <ion-label position="floating" class="wow fadeInUp" data-wow-delay="0.8s">Correo electrónico</ion-label>
-      <ion-input></ion-input>
+     <ion-item class="inputCorreo" type="email">
+     
+      <ion-label position="floating" class="wow fadeInUp" data-wow-delay="0.8s" type="email">Correo electrónico</ion-label>
+      <ion-input required 
+      type="email" name="email" ngModel email="true"
+      id="email"
+      required
+      [(ngModel)]="solicitud.CORREO"
+      ></ion-input>
     </ion-item>
     <br/>
     <br/>
-    <ion-button>
+    <ion-button (click)="presentAlertConfirm()">
       <ion-icon slot="start" name="mail-outline"></ion-icon>
       Enviar solicitud
       <ion-icon slot="end" name="push-outline"  class="wow bounce infinite"></ion-icon>

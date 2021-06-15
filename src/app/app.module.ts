@@ -19,6 +19,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     AngularFireModule.initializeApp(environment.nuevosProveedores),
+    AngularFireModule.initializeApp(environment.solicitudNuevoProveedor),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

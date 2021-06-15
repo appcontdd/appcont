@@ -13,6 +13,16 @@ export const environment = {
     messagingSenderId: "972835851903",
     appId: "1:972835851903:web:56fc53c2b3404612b0b94a",
     measurementId: "G-V62C3KLTR0"
+  },
+  solicitudNuevoProveedor:{
+    apiKey: "AIzaSyBn7CzV-eCmkkWe44LCmanUKHE8_UNZRm8",
+    authDomain: "registro-nuevos-proveedores-1.firebaseapp.com",
+    databaseURL: "https://registro-nuevos-proveedores-1-default-rtdb.firebaseio.com",
+    projectId: "registro-nuevos-proveedores-1",
+    storageBucket: "registro-nuevos-proveedores-1.appspot.com",
+    messagingSenderId: "651233377583",
+    appId: "1:651233377583:web:4035276352c1ced2dcf5da",
+    measurementId: "G-E0PX7YQF25"
   }
 };
 

@@ -21,6 +21,10 @@ const routes: Routes = [
     path: 'olvido-pagina',
     loadChildren: () => import('./olvido-pagina/olvido-pagina.module').then( m => m.OlvidoPaginaPageModule)
   },
+  {
+    path: 'confirmacion-envio-solicitud',
+    loadChildren: () => import('./confirmacion-envio-solicitud/confirmacion-envio-solicitud.module').then( m => m.ConfirmacionEnvioSolicitudPageModule)
+  },
 
   
 ];
