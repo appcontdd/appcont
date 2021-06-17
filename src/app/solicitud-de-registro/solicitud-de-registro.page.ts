@@ -24,49 +24,7 @@ export class SolicitudDeRegistroPage implements OnInit {
   ngOnInit(): void {
     this.wowService.init(); 
   }
-
-  async presentAlertConfirm() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Deseas enviar solicitud de Registro!',
-      subHeader: 'por favor validar su correo electrónico para continuar el proceso!!!',
-      message: 'Este proceso será para crear su ecommerce',
-      buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            console.log('Confirm Cancel: blah');
-          }
-        }, {
-          text: 'Enviar',
-          handler: () => {
-            this.saveTutorial();
-            this.confirmacionSolicitud();
-            this.newTutorial();
-          }
-        }
-      ]
-    });
-
-    await alert.present();
-  }
-
   
-  confirmacionSolicitud(){
-    this.router.navigate(["/confirmacion-envio-solicitud"]);
- }
-  saveTutorial(): void {
-    this.tutorialService.create(this.solicitud).then(() => {
-      console.log('Created new item successfully!');
-      this.submitted = true;
-    });
-  }
-
-  newTutorial(): void {
-    this.submitted = false;
-    this.solicitud = new SolicitudProveedor();
-  }
+ 
 
 }

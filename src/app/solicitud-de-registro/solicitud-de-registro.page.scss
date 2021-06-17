@@ -15,3 +15,23 @@
     margin-right: auto;
     max-width: 500px;
 }
+@media (max-width: 600px) {
+    .formulario{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 345px;
+        height: 800px;
+  }
+
+}
+@media (min-width: 601px) {
+    .formulario{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 700px;
+        height: 550px;
+  }
+
+}

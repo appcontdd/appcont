@@ -1,0 +1,59 @@
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxtlloRtMNbNtRGxu1qaEvOJsYSaWybdUSmK3bCApGYMkvC1zey2FNRPTxD0qO5REsYfQ/exec'
+  const form = document.forms['form01']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+<ion-header>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxtlloRtMNbNtRGxu1qaEvOJsYSaWybdUSmK3bCApGYMkvC1zey2FNRPTxD0qO5REsYfQ/exec'
+    const form = document.forms['form01']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  <ion-toolbar>
+    <ion-title>confirmacionNuevoProveedor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form name="form01">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <button type="submit" value="Submit" (click)="funcionEnsayo()">Enviar</button>
+  </form> 
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxtlloRtMNbNtRGxu1qaEvOJsYSaWybdUSmK3bCApGYMkvC1zey2FNRPTxD0qO5REsYfQ/exec'
+    const form = document.forms['form01']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</ion-content>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwEfmuwZxTk_SGHEluaRhNJFDmju2wBXt3Z-KSK1PD5vwVuT4OB1NjLbXZkJOUIOVfEjQ/exec'
+  const form = document.forms['form01']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
