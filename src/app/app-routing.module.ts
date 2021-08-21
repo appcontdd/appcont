@@ -49,7 +49,11 @@ const routes: Routes = [
   {
     path: 'proveedorq5e1gd4tre6d3fg1df7try564dfg3',
     loadChildren: () => import('./registro/proveedor6/proveedor6.module').then( m => m.Proveedor6PageModule)
+  },  {
+    path: 'header-empresas',
+    loadChildren: () => import('./header-empresas/header-empresas.module').then( m => m.HeaderEmpresasPageModule)
   },
+
 
   
 ];

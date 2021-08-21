@@ -1,0 +1,21 @@
+
+<!--Menú Mi Perfil-->
+<!--ToolBar-->
+<ion-card>
+<ion-segment scrollable value="primero">
+  <ion-segment-button *ngFor="let item2 of lista2">
+    <ion-label>{{item2.title}}</ion-label>
+  </ion-segment-button>
+</ion-segment>
+<ion-segment scrollable value="primero">
+  <ion-segment-button *ngFor="let item1 of lista1">
+    <ion-chip color="primary"> 
+      <ion-avatar>
+        <img src="{{item1.urlImg}}">
+      </ion-avatar>
+      <ion-label>{{item1.title}}</ion-label>
+    </ion-chip>
+  </ion-segment-button>
+</ion-segment>
+</ion-card>
+<!--ToolBar-->
