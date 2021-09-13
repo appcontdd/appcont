@@ -13,8 +13,14 @@ import { HeaderEmpresasPage } from './header-empresas.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    HeaderEmpresasPageRoutingModule
+    HeaderEmpresasPageRoutingModule,
+    
   ],
-  declarations: [HeaderEmpresasPage]
+
+  declarations: [HeaderEmpresasPage],
+
+  exports: [
+    HeaderEmpresasPage
+  ]
 })
 export class HeaderEmpresasPageModule {}

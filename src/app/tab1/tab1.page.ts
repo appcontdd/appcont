@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AlertController, MenuController } from '@ionic/angular';
 import { NgwWowService } from 'ngx-wow';
 
@@ -9,7 +9,36 @@ import { NgwWowService } from 'ngx-wow';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit{
+  currentItem = 'Television';
+  public items = [];
+  addItem(newItem: string) {
+    this.items.push(newItem);
+    this.actualizar();
+  }
+  
+  actualizar(){
+    this.ultimoValor.splice(0,4);
+    let ult = this.items.pop();
+    this.ultimoValor.push(ult);
+
+  }
+  public ultimoValor = [];
+
+  
+  
+  
+  
+  
+  //Cantidad de pedidos, entregas, ventas o devoluciones
+  public numPedidosPendientes = [{numero:10}];
+  public numPedidosRechazados = [{numero:9}];
+  public numEntregasPendientes = [{numero:8}];
+  public numEntregasRechazadas = [{numero:7}];
+  public numVentas = [{numero:6}];
+  public numDevoluciones = [{numero:5}];
+
+  
   public cantPedidos = [{numPendientes:5,numRechazados:2}]
   public id?:string; public nombre?:string; public descripcion?:string;
   public lista = [{id:1,nombreEmpresa:"Dinastía Digital - Market Place", imgLogo:"",Nit:"1088336464-8", actividadEcon:"Comercio Electrónico",
@@ -22,8 +51,11 @@ export class Tab1Page {
   public empresas = [{idEmpresa:1, nombreEmpresa:'Dinastía Digital', nit:'1088336464-8',
    direccion:'Cr 10 N.61-13', ciudad:'Pereira', departamento:'Risaralda',pais:'Colombia'} ]
 
-constructor(public menu: MenuController, public alertController: AlertController, private wowService: NgwWowService) { }
+constructor(public menu: MenuController, public alertController: AlertController, private wowService: NgwWowService) {
+  
 
+ }
+ 
 ngOnInit() {
   
 }

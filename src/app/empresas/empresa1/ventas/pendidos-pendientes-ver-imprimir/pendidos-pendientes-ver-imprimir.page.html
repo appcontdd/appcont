@@ -1,0 +1,286 @@
+<!-- Cabecera -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title> 
+      <button mdbBtn type="button" color="success" rounded="true" mdbWavesEffect routerLink="/tabs/tab1">
+        <mdb-icon fas icon="arrow-circle-left"></mdb-icon>
+      </button>
+      Ver o imprimir pedido pendiente</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- Cabecera -->
+
+<!-- Contenido body -->
+<ion-content>
+  <!-- botones iniciales -->
+  <div class="center">
+    <ion-button shape="round" fill="outline" color="success" class="botonImprimir" >Imprimir documento 
+      <ion-icon name="print-outline"></ion-icon>
+    </ion-button>
+    <ion-button shape="round" fill="outline" color="success" class="botonImprimir" >Envíar documento al cliente 
+      <ion-icon name="mail-outline"></ion-icon>
+    </ion-button>
+    <ion-button shape="round" fill="outline" color="success" class="botonImprimir">Plantilla de documento
+       <ion-icon name="document-text-outline"></ion-icon>
+    </ion-button>
+    <ion-button shape="round" fill="outline" color="success" class="botonImprimir" >Descargar XLS 
+      <ion-icon name="document-attach-outline"></ion-icon>
+    </ion-button>
+    <ion-button shape="round" fill="outline" color="warning" class="botonImprimir" >Editar Perdido 
+      <ion-icon name="construct-outline"></ion-icon>
+    </ion-button>
+  </div>
+  <!-- botones iniciales -->
+  <div class="center">
+    <ion-card class="cardPedido">
+      <ion-card-header>
+        <ion-item>
+        <ion-card-title>Pedido:</ion-card-title> &nbsp;&nbsp;
+          <label> Haz </label> &nbsp;
+          <label> seleccionado </label> &nbsp;
+          <label>el </label>&nbsp;
+          <label>pedido </label>&nbsp;
+          <label>de</label>&nbsp;
+          <label>referencia:</label> &nbsp;    
+        <ion-chip  color="success" >
+          <ion-icon name="link-outline"></ion-icon> &nbsp; REFCL1EM1PD
+        </ion-chip>
+        <label>Numero:</label>  
+        <ion-chip  color="success" >
+            <ion-input disabled>1</ion-input>
+        </ion-chip>
+        </ion-item>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- Card Cliente -->
+        <ion-item>
+          <ion-card class="center" *ngFor="let client of cliente">
+            <ion-card-header>
+              <ion-card-title>
+                Cliente ID: {{client.id}}
+              </ion-card-title>
+            </ion-card-header>
+              <ion-card-content>
+                <div class="row">
+                <ion-card>
+                  <ion-card-content>
+                      <ion-card-subtitle>
+                        <ion-item>
+                        <mdb-icon fas icon="file-signature" class="text-primary"></mdb-icon> &nbsp;
+                        Nombre:
+                          <ion-chip color="primary">
+                            <ion-label>{{client.nombreCliente}}</ion-label>
+                          </ion-chip>
+                        </ion-item>
+                      </ion-card-subtitle>
+                      <ion-card-subtitle *ngIf="client.esEmpresa">
+                        <ion-item>
+                        <mdb-icon fas icon="building" class="text-primary"></mdb-icon> &nbsp;
+                        Empresa: &nbsp; <ion-checkbox checked="true" disabled></ion-checkbox>
+                        </ion-item>
+                      </ion-card-subtitle>
+                      <ion-card-subtitle>
+                        <ion-item>
+                        <mdb-icon fas icon="phone-alt" class="text-primary"></mdb-icon> &nbsp;
+                        Telefono:
+                          <ion-chip color="primary">
+                            <ion-label>{{client.telefono}}</ion-label>
+                          </ion-chip>
+                        </ion-item>
+                      </ion-card-subtitle>
+                      <ion-card-subtitle>
+                        <ion-item>
+                        <mdb-icon fas icon="mobile-alt" class="text-primary"></mdb-icon> &nbsp;
+                        Celular:
+                          <ion-chip color="primary">
+                            <ion-label>{{client.celular}}</ion-label>
+                          </ion-chip>
+                        </ion-item>
+                      </ion-card-subtitle>
+                      
+                  </ion-card-content>
+                </ion-card>
+                <ion-card>
+                  <ion-card-content>
+                      <ion-card-subtitle>
+                        <ion-item>
+                        <mdb-icon fas icon="id-card-alt" class="text-primary"></mdb-icon> &nbsp;
+                        Doc. Identidad o NIT:
+                          <ion-chip color="primary">
+                            <ion-label>{{client.di}}</ion-label>
+                          </ion-chip>
+                        </ion-item>
+                      </ion-card-subtitle>
+                      <ion-card-subtitle>
+                        <ion-item>
+                        <mdb-icon fas icon="directions" class="text-primary"></mdb-icon> &nbsp;
+                        Dirección:
+                          <ion-chip color="primary">
+                            <ion-label>{{client.direccion}}</ion-label>
+                          </ion-chip>
+                        </ion-item>
+                      </ion-card-subtitle>
+                      <ion-card-subtitle>
+                        <ion-item>
+                        <mdb-icon fas icon="eye" class="text-primary"></mdb-icon> &nbsp;
+                        Observaciones:
+                          <ion-chip color="primary">
+                            <ion-label>{{client.obs}}</ion-label>
+                          </ion-chip>
+                        </ion-item>
+                      </ion-card-subtitle>
+                      <ion-card-subtitle>
+                        <ion-item>
+                        <mdb-icon fas icon="envelope-square" class="text-primary"></mdb-icon> &nbsp;
+                        Email:
+                          <ion-chip color="primary">
+                            <ion-label>{{client.email}}</ion-label>
+                          </ion-chip>
+                        </ion-item>
+                      </ion-card-subtitle>
+                  </ion-card-content>
+                </ion-card>
+              </div>
+              </ion-card-content>
+          </ion-card>
+        </ion-item>
+        <!-- Card Cliente -->
+        <!-- Card productos -->
+        <ion-item>
+          <ion-card class="center" >
+            <div class="producto">
+            <ion-card-header>
+              <ion-card-title>
+                Productos o servicios del pedido
+              </ion-card-title>
+            </ion-card-header>
+              <ion-card-content>
+                <div class="row">
+                  <ion-card *ngFor="let product of productos" class="center">
+                    <ion-card-header>
+                      <ion-card-title>
+                        Producto
+                      </ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                      <ion-item>
+                        <mdb-icon far icon="id-card" class="text-success"></mdb-icon> &nbsp;
+                        id: 
+                          <ion-chip color="success">
+                            <ion-label>{{product.id}}</ion-label>
+                          </ion-chip>
+                      </ion-item>
+                      <ion-item>
+                        <mdb-icon fas icon="shopping-cart" class="text-success"></mdb-icon> &nbsp;
+                        Nombre: 
+                          <ion-chip color="success">
+                            <ion-label>{{product.nombreProducto}}</ion-label>
+                          </ion-chip>
+                      </ion-item>
+                      <ion-item>
+                        <mdb-icon fas icon="file-signature" class="text-success"></mdb-icon> &nbsp;
+                        Detalle: 
+                          <ion-chip color="success">
+                            <ion-label>{{product.detalle}}</ion-label>
+                          </ion-chip>
+                      </ion-item>
+                      <ion-item>
+                        <mdb-icon fas icon="cubes" class="text-success"></mdb-icon> &nbsp;
+                        Proveedor Id: 
+                          <ion-chip color="success">
+                            <ion-label>{{product.proveedorId}}</ion-label>
+                          </ion-chip>
+                      </ion-item>
+                      <ion-item>
+                        <mdb-icon fas icon="dollar-sign" class="text-success"></mdb-icon> &nbsp;
+                        Valor unitario: 
+                          <ion-chip color="success">
+                            <ion-label>{{product.valorVentaUni}}</ion-label>
+                          </ion-chip>
+                      </ion-item>
+                      <ion-item>
+                        <mdb-icon fas icon="dolly-flatbed" class="text-success"></mdb-icon> &nbsp;
+                        Cantidad: 
+                          <ion-chip color="success">
+                            <ion-label>{{product.cantProduct}}</ion-label>
+                          </ion-chip>
+                      </ion-item>
+                      <ion-item>
+                        <mdb-icon fas icon="hand-holding-usd" class="text-success"></mdb-icon> &nbsp;
+                        Total: 
+                          <ion-chip color="success">
+                            <ion-label>{{product.valorTotalVent}}</ion-label>
+                          </ion-chip>
+                      </ion-item>
+                    </ion-card-content>
+                  </ion-card>
+                </div>
+              </ion-card-content>
+            </div>
+          </ion-card>
+        </ion-item>
+        <!-- Entrega del pedido -->
+        <ion-item>
+          <ion-card class="center">
+            <div class="producto">
+              <ion-card-header>
+                <ion-card-title>
+                  Entrega
+                </ion-card-title>
+              </ion-card-header>
+              <ion-card-content class="center">
+                <div class="row center">
+                  <ion-card *ngFor="let entr of entrega" >
+                    <ion-card-content>
+                      <ion-item>
+                        <mdb-icon fas icon="clipboard-check" class="text-default"></mdb-icon> &nbsp;
+                        Referencia de entrega:
+                          <ion-chip color="secondary">
+                            <ion-label>{{entr.refEntrega}}{{entr.numrefEntrega}}</ion-label>
+                          </ion-chip>
+                      </ion-item>
+                      <ion-item>
+                        <mdb-icon fas icon="clipboard-list" class="text-default"></mdb-icon> &nbsp;
+                        Guía de entrega:
+                          <ion-chip color="secondary">
+                            <ion-label>{{entr.guiaEntrega}}</ion-label>
+                          </ion-chip>
+                      </ion-item>
+                      <ion-item>
+                        <mdb-icon fas icon="truck-moving" class="text-default"></mdb-icon> &nbsp;
+                        Transportista:
+                          <ion-chip color="secondary">
+                            <ion-label>{{entr.transportista}}</ion-label>
+                          </ion-chip>
+                      </ion-item>
+                    </ion-card-content>
+                  </ion-card>
+                  <ion-card *ngFor="let entr of entrega" >
+                    <ion-card-content>
+                      <ion-item>
+                        <mdb-icon fas icon="plane-departure" class="text-default"></mdb-icon> &nbsp;
+                        Url de Entrega:
+                          <ion-chip color="secondary">
+                            <ion-label>{{entr.urlEntrega}}</ion-label>
+                          </ion-chip>
+                      </ion-item>
+                      <ion-item>
+                        <mdb-icon fas icon="map-marker-alt" class="text-default"></mdb-icon> &nbsp;
+                        Url de Ubicación:
+                          <ion-chip color="secondary">
+                            <ion-label>{{entr.urlUbicacion}}</ion-label>
+                          </ion-chip>
+                      </ion-item>
+                    </ion-card-content>
+                  </ion-card>
+                </div>
+              </ion-card-content>
+            </div>
+          </ion-card>
+        </ion-item>
+        <!-- Entrega del pedido -->
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+<!-- Contenido body -->

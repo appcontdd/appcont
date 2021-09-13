@@ -1,0 +1,92 @@
+<!-- Botones de registro -->
+<ion-item class="centrar">
+  <ion-chip color="danger" style="margin-left: auto; margin-right: auto; text-align: center;" routerLink="/registro-de-pedido-empresa1">
+    <ion-icon name="bag-add-outline"></ion-icon>
+    <ion-label color="dark"><ion-icon name="add-outline" color="dark"></ion-icon>Registro de Pedido</ion-label>          
+  </ion-chip>
+  <ion-chip color="warning" style="margin-left: auto; margin-right: auto; text-align: center;" routerLink="/registro-de-entrega-empresa1">
+    <ion-icon name="airplane-outline"></ion-icon>
+    <ion-label color="dark"><ion-icon name="add-outline" color="dark"></ion-icon>Registro de Entrega</ion-label>          
+  </ion-chip>
+  <ion-chip color="success" style="margin-left: auto; margin-right: auto; text-align: center;" routerLink="/registro-de-venta-empresa1">
+    <ion-icon name="storefront-outline"></ion-icon>
+    <ion-label color="dark"><ion-icon name="add-outline" color="dark"></ion-icon>Registro de Venta</ion-label>
+  </ion-chip>
+</ion-item>
+<!-- Botones de registro -->
+
+<!-- Segmetos pedidos, entregas, ventas, devoluciones -->
+<ion-segment scrollable value="Pedidos Pendientes" style="margin-left: auto; margin-right: auto; text-align: center;">
+      <ion-segment-button value="Pedidos Pendientes" style="margin-left: auto; margin-right: auto; text-align: center;"
+      *ngFor="let numPp of numPedidosPendientes" (click)="pedidosPendientes=true; pedidosRechazados=false; entregasPendientes=false;
+      entregasRechazadas=false; ventas=false; devoluciones=false">    
+        <ion-label><ion-icon name="bag-add-outline"></ion-icon> Pedidos Pendientes <span class="badge bg-danger ms-2"> 
+          <h4 style="color: white;">{{numPp.numero}}</h4></span></ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="Pedidos Rechazados" style="margin-left: auto; margin-right: auto; text-align: center;"
+      *ngFor="let numPr of numPedidosRechazados" (click)="pedidosPendientes=false; pedidosRechazados=true; entregasPendientes=false;
+      entregasRechazadas=false; ventas=false; devoluciones=false">   
+        <ion-label><ion-icon name="bag-add-outline"></ion-icon> Pedidos Rechazados <span class="badge bg-primary ms-2"> 
+          <h4 style="color: white;">{{numPr.numero}}</h4></span></ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="Entregas" style="margin-left: auto; margin-right: auto; text-align: center;"
+      *ngFor="let numEp of numEntregasPendientes" (click)="pedidosPendientes=false; pedidosRechazados=false; entregasPendientes=true;
+      entregasRechazadas=false; ventas=false; devoluciones=false"> 
+        <ion-label><ion-icon name="airplane-outline"></ion-icon> Entregas Pendientes <span class="badge bg-warning ms-2"> 
+          <h4 style="color: white;">{{numEp.numero}}</h4></span></ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="Entregas Pendientes" style="margin-left: auto; margin-right: auto; text-align: center;"
+      *ngFor="let numEr of numEntregasRechazadas" (click)="pedidosPendientes=false; pedidosRechazados=false; entregasPendientes=false;
+      entregasRechazadas=true; ventas=false; devoluciones=false">   
+        <ion-label><ion-icon name="airplane-outline"></ion-icon> Entregas Rechazadas <span class="badge bg-primary ms-2"> 
+          <h4 style="color: white;">{{numEr.numero}}</h4></span></ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="Ventas" style="margin-left: auto; margin-right: auto; text-align: center;"
+      *ngFor="let numV of numVentas" (click)="pedidosPendientes=false; pedidosRechazados=false; entregasPendientes=false;
+      entregasRechazadas=false; ventas=true; devoluciones=false"> 
+        <ion-label><ion-icon name="storefront-outline"></ion-icon> Ventas <span class="badge bg-success ms-2"> 
+          <h4 style="color: white;">{{numV.numero}}</h4></span></ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="Devoluciones" style="margin-left: auto; margin-right: auto; text-align: center;"
+      *ngFor="let numD of numDevoluciones" (click)="pedidosPendientes=false; pedidosRechazados=false; entregasPendientes=false;
+      entregasRechazadas=false; ventas=false; devoluciones=true">
+        <ion-label><ion-icon name="storefront-outline"></ion-icon> Devoluciones <span class="badge bg-primary ms-2"> 
+          <h4 style="color: white;">{{numD.numero}}</h4></span></ion-label>
+      </ion-segment-button>
+</ion-segment>
+
+<!-- Pedidos Pendientes -->
+<div *ngIf="pedidosPendientes">
+  <app-pedidos-pendientes-empresa1></app-pedidos-pendientes-empresa1>
+</div>
+<!-- Pedidos Pendientes -->
+
+<!-- Pedidos Rechazados -->
+<div *ngIf="pedidosRechazados">
+  <app-pedidos-rechazados-empresa1></app-pedidos-rechazados-empresa1>
+</div>
+<!-- Pedidos Rechazados -->
+
+<!-- Entregas Pendientes -->
+<div *ngIf="entregasPendientes">
+  <app-entregas-pendientes-empresa1></app-entregas-pendientes-empresa1>
+</div>
+<!-- Entregas Pendientes -->
+
+<!-- Entregas Rechazadas -->
+<div *ngIf="entregasRechazadas">
+  <app-entregas-rechazadas-empresa1></app-entregas-rechazadas-empresa1>
+</div>
+<!-- Entregas Rechazadas -->
+
+<!-- Ventas -->
+<div *ngIf="ventas">
+  <app-ventas-empresa1></app-ventas-empresa1>
+</div>
+<!-- Ventas -->
+
+<!-- Devoluciones -->
+<div *ngIf="devoluciones">
+  <app-devoluciones-empresa1></app-devoluciones-empresa1>
+</div>
+<!-- Devoluciones -->

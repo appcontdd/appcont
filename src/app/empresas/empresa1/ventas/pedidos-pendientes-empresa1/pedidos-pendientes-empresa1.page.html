@@ -1,0 +1,121 @@
+<!-- Titulo -->
+<section class="center">
+      <h3 class="font-weight-bold mb-3"><strong class="indigo-text">Pedidos Pendientes</strong></h3>
+</section>
+<!-- Titulo -->
+
+<!-- Pedidos Pendientes -->
+<section>
+<div style="text-align: center;margin-right: auto; margin-left: auto; background-color: rgb(255, 255, 255); max-width: 95%;">
+  <div style="text-align: center;margin-right: auto; margin-left: auto; background-color: rgb(255, 255, 255); max-width: 90%;">
+  <ion-item>
+      <ion-title>Pedidos pendientes de la empresa: </ion-title>
+  </ion-item>
+  <ion-item>
+      <ion-title>Usuario:
+      </ion-title>
+      <div class="label" style="margin-left: 0%; margin-right: 0%;">
+        <img src="https://res.cloudinary.com/newstartap/image/upload/v1616785574/imagenesParticipantes/Miguel_Paez_jpg_qdta4w.jpg"
+         class="rounded-circle z-depth-1-half" style="max-width: 40px; max-height: 40px;">
+      </div>&nbsp;&nbsp;
+      <ion-label>Miguel Páez</ion-label>
+      <h5 >Permisos: 
+        <ion-chip [disabled]="true">
+          <ion-label >Editar </ion-label> &nbsp;&nbsp;
+          <div *ngFor="let a of permisoEditar">
+          <ion-checkbox checked="{{a.editar}}"></ion-checkbox>
+          </div>
+        </ion-chip>
+        <ion-chip [disabled]="true">
+          <ion-label>ver/Impimir</ion-label>
+          &nbsp;&nbsp;
+          <div *ngFor="let b of permisoVerImprimir">
+            <ion-checkbox checked="{{b.verImp}}"></ion-checkbox>
+            </div>
+        </ion-chip>
+        <ion-chip [disabled]="true">
+          <ion-label>Rechazar</ion-label>
+          &nbsp;&nbsp;
+          <div *ngFor="let c of permisoRechazar">
+            <ion-checkbox checked="{{c.rechazar}}"></ion-checkbox>
+            </div>
+        </ion-chip>
+        <ion-chip [disabled]="true">
+          <ion-label>Despachar</ion-label>
+          &nbsp;&nbsp;
+          <div *ngFor="let d of permisoDespachar">
+            <ion-checkbox checked="{{d.despachar}}"></ion-checkbox>
+            </div>
+        </ion-chip>
+      </h5>
+
+  </ion-item>
+    
+    <ion-card style="text-align: center;margin-right: auto; margin-left: auto;">
+      <div >
+<table class="table table-hover table-responsive align-middle " >
+  <thead class="table-light">
+    <tr>
+
+      <th scope="col" *ngIf="perEdi">Editar</th>
+      <th scope="col" *ngIf="perVer">Ver/Imprimir</th>
+      <th scope="col">Referencia</th>
+      <th scope="col">#</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Cantidad Productos</th>
+      <th scope="col">Nombre del Cliente</th>
+      <th scope="col">Celular del Cliente</th>
+      <th scope="col" *ngIf="perRec">Rechazar Pedido</th>
+      <th scope="col" *ngIf="perDes">Despachar Pedido</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pedidos of pedidosPendientes">
+      <th scope="row" *ngIf="perEdi">
+        <ion-chip color="warning" routerLink="/pedidos-pendientes-editar">
+          <ion-icon name="construct-outline"></ion-icon>&nbsp;&nbsp;
+        </ion-chip>      
+      </th>
+      <td *ngIf="perVer">
+      <ion-chip color="success" routerLink="/pendidos-pendientes-ver-imprimir">
+        <ion-icon name="eye-outline"></ion-icon>&nbsp;&nbsp;
+      </ion-chip>
+     </td>
+      <td>
+        {{pedidos.referencia}}
+      </td>
+      <td>
+        {{pedidos.id}}
+      </td>
+      <td>
+        {{pedidos.fecha}}
+      </td>
+      <td>
+        {{pedidos.canProducts}}
+      </td>
+      <td>
+        {{pedidos.nomCliente}}
+      </td>
+      <td>
+        {{pedidos.celCliente}}
+      </td>
+      <td>
+        <ion-chip color="danger" *ngIf="perRec">
+          <ion-icon name="trash-bin-outline"></ion-icon>&nbsp;&nbsp;
+        </ion-chip>
+      </td>
+      <td *ngIf="perDes">
+        <ion-chip color="success">
+          <ion-icon name="rocket-outline"></ion-icon>&nbsp;&nbsp;
+        </ion-chip>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+  </ion-card>
+</div>
+  </div>
+
+</section>
+<!-- Pedidos Pendientes -->

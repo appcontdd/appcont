@@ -1,0 +1,97 @@
+<!-- llamado externo modal w3 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- llamado externo modal w3 -->
+
+<!-- Cabecera -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title> <ion-button color="warning" routerLink="/tabs/tab1"><ion-icon name="arrow-undo-circle-outline"></ion-icon></ion-button> 
+      Editar pedido pendiente</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- Cabecera -->
+
+<!-- Contenido de la página -->
+<ion-content>
+  <ion-card>
+    <!-- card referencia del pedido seleccionado -->
+    <ion-card-header>
+      <ion-card-title>Editar Pedido</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+      <ion-chip [disabled]="true" color="warning">
+        <ion-label><ion-icon name="link-outline"></ion-icon> Referencia: </ion-label>
+      </ion-chip>
+      <ion-chip [disabled]="true" color="warning">
+        <ion-label><ion-icon name="link-outline"></ion-icon> Numero: </ion-label>
+      </ion-chip>
+    </ion-item> 
+    <!-- card referencia del pedido seleccionado -->
+
+    <br/>
+       <!-- card cliente seleccionado o selecionar nuevo, o crear uno nuevo -->
+  <ion-item>
+        <select class="browser-default custom-select" [(ngModel)]="opcionSeleccionado" (change)="capturar()">
+          <option value="0">Selecciona un cliente</option> 
+          <option *ngFor="let cliente of users"  >{{cliente.first + ' ' + cliente.last}}</option>
+        </select>
+      
+        <ion-button shape="round" fill="outline" color="warning" onclick="document.getElementById('id01').style.display='block'" >
+          Crear cliente nuevo</ion-button>
+        <ion-button shape="round" fill="outline" color="warning">Buscar cliente</ion-button>
+        <ion-chip [disabled]="true" color="warning" [hidden]="opcionSeleccionado == '0'">
+          <ion-label ><ion-icon name="link-outline"></ion-icon> Haz seleccionado al cliente: 
+             </ion-label> &nbsp;&nbsp;<ion-input>{{ verSeleccion }}</ion-input>
+        </ion-chip>
+      </ion-item>
+    <ion-card [hidden]="opcionSeleccionado == '0'">
+      <ion-card-header>
+        <ion-card-title>Datos del cliente:</ion-card-title>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <ion-chip  [hidden]="opcionSeleccionado == '0'">
+          <ion-label ><ion-icon name="link-outline"></ion-icon> Haz seleccionado al cliente: 
+             </ion-label> &nbsp;&nbsp;<ion-input>{{ verSeleccion }}</ion-input>
+        </ion-chip>
+        <ion-chip  [hidden]="opcionSeleccionado == '0'">
+          <ion-label ><ion-icon name="link-outline"></ion-icon> Haz seleccionado al cliente: 
+             </ion-label> &nbsp;&nbsp;<ion-input>{{ verSeleccion.id }}</ion-input>
+        </ion-chip>
+      </ion-card-content>
+    </ion-card>  
+    <!-- card cliente seleccionado o selecionar nuevo, o crear uno nuevo -->
+    <ion-item>
+      <ion-label position="floating" color="">Floating Label</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<!-- Contenido de la página -->
+
+<!-- Modal Creación de cliente -->
+<div class="w3-container">
+  <div id="id01" class="w3-modal">
+        <div class="modal-content center">
+          <div class="modal-header " >
+            <button type="button" class="close pull-right" aria-label="Close" onclick="document.getElementById('id01').style.display='none'">
+              <mdb-icon far icon="times-circle"></mdb-icon>
+            </button>
+            <h4 class="modal-title w-100" id="myModalLabel" >Creación de cliente</h4>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" onclick="document.getElementById('id01').style.display='none'" mdbWavesEffect>
+              <mdb-icon fas icon="times-circle"></mdb-icon> &nbsp; Cerrar</button>
+            <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>
+              <mdb-icon fas icon="save"></mdb-icon> &nbsp; Guardar cambios</button>
+          </div>
+        </div>
+  </div>
+</div>
+<!-- Modal Creación de cliente -->
